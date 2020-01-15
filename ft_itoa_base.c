@@ -6,30 +6,30 @@
 /*   By: yviavant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 13:24:55 by yviavant          #+#    #+#             */
-/*   Updated: 2020/01/07 21:19:52 by yviavant         ###   ########.fr       */
+/*   Updated: 2020/01/15 15:41:51 by yviavant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_len(int n, int base)
+static int	ft_len(size_t n, int base)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (n)
 	{
-		i++;
 		n /= base;
+		i++;
 	}
 	return (i);
 }
 
-char		*ft_itoa_base(int n, int base)
+char		*ft_itoa_base(size_t n, int base)
 {
 	char	*str;
 	int		len;
-	int		digit;
+	size_t	digit;
 	
 	len = ft_len(n, base);
 	if (!(str = (char *)malloc(sizeof(char *) * (len + 1))))
@@ -38,8 +38,8 @@ char		*ft_itoa_base(int n, int base)
 	while (n)
 	{
 		digit = n % base;
-		str[len--] = digit < 0xA ? ('0' + digit) : ('A' + digit - 0xA);
 		n /= base;
+		str[len--] = (digit < 0xA) ? ('0' + digit) : ('a' + digit - 0xA);
 	}
 	return (str);
 }
