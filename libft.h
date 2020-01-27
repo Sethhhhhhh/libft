@@ -6,7 +6,7 @@
 /*   By: yviavant <yviavant@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 10:50:56 by yviavant          #+#    #+#             */
-/*   Updated: 2020/01/15 18:57:06 by yviavant         ###   ########.fr       */
+/*   Updated: 2020/01/27 20:43:49 by yviavant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void			ft_putnbr_base_fd(size_t n, int base, int fd);
 void			ft_putstr_fd(char *s, int fd);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);
-char			*ft_itoa(int n);
-char			*ft_itoa_base(size_t n, int base, int maj);
+char			*ft_itoa(long n);
+char			*ft_itoa_base(long n, int base, int maj);
 char			**ft_split(char const *s, char c);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strjoin(char const *s1, char const *s2);

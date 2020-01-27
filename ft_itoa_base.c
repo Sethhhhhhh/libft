@@ -6,15 +6,15 @@
 /*   By: yviavant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 13:24:55 by yviavant          #+#    #+#             */
-/*   Updated: 2020/01/15 18:56:44 by yviavant         ###   ########.fr       */
+/*   Updated: 2020/01/27 20:43:26 by yviavant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_len(size_t n, int base)
+static int	ft_len(long n, int base)
 {
-	size_t	i;
+	long	i;
 
 	i = 0;
 	while (n)
@@ -25,13 +25,15 @@ static int	ft_len(size_t n, int base)
 	return (i);
 }
 
-char		*ft_itoa_base(size_t n, int base, int maj)
+char		*ft_itoa_base(long n, int base, int maj)
 {
 	char	*str;
 	int		len;
-	size_t	digit;
+	long	digit;
 	char	letter;
 
+	if (!n)
+		return (ft_strdup("0"));
 	letter = maj ? 'A' : 'a';
 	len = ft_len(n, base);
 	if (!(str = (char *)malloc(sizeof(char *) * (len + 1))))

@@ -6,7 +6,7 @@
 /*   By: yviavant <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 05:03:38 by yviavant          #+#    #+#             */
-/*   Updated: 2020/01/14 16:23:03 by yviavant         ###   ########.fr       */
+/*   Updated: 2020/01/27 19:40:52 by yviavant         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,14 @@ static void		ft_write(long n, int len, char *str)
 	}
 }
 
-char			*ft_itoa(int n)
+char			*ft_itoa(long n)
 {
 	int		count_char;
 	char	*str;
-	long	ln;
 
-	ln = (long)n;
-	count_char = ft_len(ln);
+	count_char = ft_len(n);
 	if ((str = (char *)malloc(sizeof(char) * count_char + 1)) == NULL)
 		return (NULL);
-	ft_write(ln, count_char, str);
+	ft_write(n, count_char, str);
 	return (str);
 }
